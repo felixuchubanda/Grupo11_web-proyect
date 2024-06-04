@@ -61,7 +61,7 @@ Usuario.hasOne(Adoptante, {
   targetKey: 'id_usuario', 
 });
 
-Usuario.belongsTo(Adoptante, {
+Usuario.belongsTo(Usuario, {
   foreignKey: 'id_usuario', // Clave externa en la tabla Adoptante
   targetKey: 'id_usuario',
 });
