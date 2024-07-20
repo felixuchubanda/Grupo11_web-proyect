@@ -78,14 +78,20 @@
     }
   }
   .register-link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
-  }
-  
-  .register-link {
+}
+
+.register-link,
+.forgot-password-link {
     color: #007bff;
     text-decoration: none;
-  }
-  
-  .register-link:hover {
+    margin: 5px 0;
+}
+
+.register-link:hover,
+.forgot-password-link:hover {
     text-decoration: underline;
-  }
+}

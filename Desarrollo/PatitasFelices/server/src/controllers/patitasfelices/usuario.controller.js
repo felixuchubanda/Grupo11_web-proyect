@@ -67,3 +67,26 @@ export const loginUsuario = async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 };
+
+export const solicitarRestablecimientoContrasena = async (req, res) => {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).json({ message: 'El correo electrónico es requerido.' });
+        }
+        await UsuarioService.solicitarRestablecimientoContrasena(email);
+        res.json({ message: 'Correo de recuperación enviado.' });
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+
+export const restablecerContrasena = async (req, res) => {
+    try {
+        const { token, nuevaContrasena } = req.body;
+        await UsuarioService.restablecerContrasena(token, nuevaContrasena);
+        res.json({ message: 'Contraseña actualizada correctamente.' });
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};

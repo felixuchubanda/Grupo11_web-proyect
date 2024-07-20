@@ -26,6 +26,8 @@ import RegistrarDevolucion from './components/GestionarDevoluciones/RegistrarDev
 import VerDevoluciones from './components/GestionarDevoluciones/VerDevoluciones';
 import Navbar from './components/Navbar';
 import AuthProvider from './AuthContext';
+import RecuperarContrasena from './components/RecuperarContrasena';
+import RestablecerContrasena from './components/RestablecerContrasena';
 
 function App() {
   return (
@@ -57,6 +59,8 @@ function App() {
           <Route path="/gestionar/solicitudes/listar" element={<ListarSolicitudes />} />
           <Route path="/gestionar/devoluciones/registrar" element={<RegistrarDevolucion />} />
           <Route path="/gestionar/devoluciones/ver" element={<VerDevoluciones />} />
+          <Route path="/recuperar-contrasena" element={<RecuperarContrasena />} />
+          <Route path="/restablecer-contrasena" element={<RestablecerContrasena />} />
         </Routes>
       </Router>
     </AuthProvider>

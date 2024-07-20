@@ -4,7 +4,7 @@ import { AuthContext } from '../AuthContext';
 import axios from 'axios';
 import MessageModal from './MessageModal'; // Asegúrate de que este componente esté correctamente importado
 import '../styles/Login.css'; // Estilos para el login y el modal
-import welcomeImage from '../assets/logo.png'; // Ajusta la ruta según sea necesario
+import welcomeImage from '../assets/logo.png'; 
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -69,6 +69,7 @@ const Login = () => {
         <button className="login-button" onClick={handleLogin}>Iniciar Sesión</button>
         <div className="register-link-container">
           <Link to="/register" className="register-link">Crear cuenta</Link>
+          <Link to="/recuperar-contrasena" className="register-link">Recuperar contrasena</Link>
         </div>
       </div>
       <MessageModal isOpen={modalOpen} message={modalMessage} onClose={() => setModalOpen(false)} type={modalType} image={modalImage} />

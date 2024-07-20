@@ -21,7 +21,7 @@ router.use('/recursos-educativos', recursoeduRoutes);
 router.use('/solicitudes-adopcion', solicitudAdopcionRoutes);
 router.use('/usuarios', usuarioRoutes);
 router.use('/', recomendarRoutes);
-router.use('/', holaRoutes);  // Nueva ruta
+router.use('/', holaRoutes);  
 router.use('/upload', uploadRoutes);
 
 

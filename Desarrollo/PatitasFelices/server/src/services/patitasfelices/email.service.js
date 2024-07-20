@@ -1,4 +1,4 @@
-// src/services/emailService.js
+// src/services/email.service.js
 
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';

@@ -1,5 +1,7 @@
 import { UsuarioRepository } from '../../repositories/index.js';
 import bcrypt from 'bcrypt';
+import sendEmail from './email.service.js';
+import jwt from 'jsonwebtoken';
 
 const UsuarioService = {
     createUsuario: async (usuarioData) => {
@@ -71,6 +73,38 @@ const UsuarioService = {
         }
 
         return usuario[0];
+    },
+
+    solicitarRestablecimientoContrasena: async (email) => {
+        const usuario = await UsuarioRepository.getAllUsuarios({
+            where: { email }
+        });
+
+        if (usuario.length === 0) {
+            throw new Error('No existe un usuario con ese correo electrónico.');
+        }
+
+        const token = jwt.sign({ id: usuario[0].id_usuario }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const enlaceRestablecimiento = `http://localhost:3001/restablecer-contrasena?token=${token}`;
+
+        await sendEmail(email, 'Restablecimiento de Contraseña', `Utiliza el siguiente enlace para restablecer tu contraseña: ${enlaceRestablecimiento}`);
+    },
+
+    restablecerContrasena: async (token, nuevaContrasena) => {
+        try {
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            const usuario = await UsuarioRepository.getUsuarioById(decoded.id);
+
+            if (!usuario) {
+                throw new Error('Token inválido o expirado.');
+            }
+
+            const hashedPassword = await bcrypt.hash(nuevaContrasena, 10);
+            usuario.contrasena = hashedPassword;
+            await usuario.save();
+        } catch (error) {
+            throw new Error('Token inválido o expirado.');
+        }
     }
 };
 
