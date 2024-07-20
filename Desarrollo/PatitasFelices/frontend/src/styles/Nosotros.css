@@ -1,0 +1,37 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.nosotros-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido horizontalmente */
+    justify-content: center; /* Centrar contenido verticalmente */
+    height: 100%;
+    background-image: url('../assets/nosotros.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente para el contenido */
+    max-width: 800px; /* Ancho máximo del contenido */
+    text-align: justify; /* Justificar texto para una mejor legibilidad */
+    color: #333; /* Color de texto */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra ligera para el contenido */
+}
+
+.content h1 {
+    color: #2bd742; /* Color verde para el título */
+    text-align: center; /* Centrar el título */
+    margin-bottom: 20px; /* Espacio inferior después del título */
+}
+
+.content p {
+    margin-bottom: 15px; /* Espacio inferior entre párrafos */
+}

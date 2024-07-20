@@ -1,75 +1,46 @@
-import { Adoptante } from '../../models/patitasfelices/adoptante.model.js';
-import { Usuario } from '../../models/patitasfelices/usuarios_model.js';
-import { sequelize } from '../../database/database.js';
+import { AdoptanteService } from '../../services/index.js';
 
-// Crear un nuevo adoptante y usuario
 export const createAdoptante = async (req, res) => {
-    const t = await sequelize.transaction();
     try {
-        const { nombre, apellido, cedula, genero, direccion, telefono, email, contraseña, edad, tiene_ninos, tiene_mascota, nivel_actividad, nivel_energia, tamaño_perro_preferido, experiencia_con_perros } = req.body;
-
-        // Verificar si el correo electrónico ya existe
-        const existingUser = await Usuario.findOne({ where: { email } });
-        if (existingUser) {
-            return res.status(400).json({ message: "El correo electrónico ya está en uso." });
-        }
-
-        // Crear el usuario
-        const newUsuario = await Usuario.create({
-            nombre,
-            apellido,
-            email,
-            contraseña,
-            nivel_acceso: "Usuario",
-            tipo: "Adoptante"
-        }, { transaction: t });
-
-        // Crear el adoptante
-        const newAdoptante = await Adoptante.create({
-            id_usuario: newUsuario.id_usuario,
-            cedula,
-            genero,
-            direccion,
-            telefono,
-            email,
-            contraseña,
-            edad,
-            tiene_ninos,
-            tiene_mascota,
-            nivel_actividad,
-            nivel_energia,
-            tamaño_perro_preferido,
-            experiencia_con_perros
-        }, { transaction: t });
-
-        // Commit de la transacción
-        await t.commit();
-
-        res.status(201).json({ usuario: newUsuario, adoptante: newAdoptante });
+        const adoptante = await AdoptanteService.createAdoptante(req.body);
+        res.status(201).json(adoptante);
     } catch (error) {
-        // Rollback de la transacción en caso de error
-        await t.rollback();
+        console.error('Error al crear adoptante:', error.message);
+        res.status(400).json({ message: error.message });
+    }
+};
+
+export const getAllAdoptantes = async (req, res) => {
+    try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = 10; // Puedes ajustar el límite de elementos por página
+        const offset = (page - 1) * limit;
+
+        const filters = {};
+
+        if (req.query.nombre) filters.nombre = req.query.nombre;
+        if (req.query.apellido) filters.apellido = req.query.apellido;
+        if (req.query.cedula) filters.cedula = req.query.cedula;
+
+        const result = await AdoptanteService.getAllAdoptantes({ limit, offset, filters });
+        const totalAdoptantes = await AdoptanteService.countAllAdoptantes(filters);
+
+        res.json({
+            adoptantes: result,
+            totalPages: Math.ceil(totalAdoptantes / limit),
+            currentPage: page
+        });
+    } catch (error) {
+        console.error('Error fetching adoptantes:', error);
         res.status(500).json({ message: error.message });
     }
 };
 
-
-// Obtener todos los adoptantes
-export const getAdoptantes = async (req, res) => {
-    try {
-        const adoptantes = await Adoptante.findAll();
-        res.status(200).json(adoptantes);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-};
-
-// Obtener un adoptante por ID
 export const getAdoptanteById = async (req, res) => {
     try {
-        const adoptante = await Adoptante.findByPk(req.params.id);
+        const adoptante = await AdoptanteService.getAdoptanteById(req.params.id);
         if (adoptante) {
-            res.status(200).json(adoptante);
+            res.json(adoptante);
         } else {
             res.status(404).json({ message: 'Adoptante no encontrado' });
         }
@@ -78,13 +49,24 @@ export const getAdoptanteById = async (req, res) => {
     }
 };
 
-// Actualizar un adoptante
 export const updateAdoptante = async (req, res) => {
     try {
-        const adoptante = await Adoptante.findByPk(req.params.id);
-        if (adoptante) {
-            await adoptante.update(req.body);
-            res.status(200).json(adoptante);
+        const updatedAdoptante = await AdoptanteService.updateAdoptante(req.params.id, req.body);
+        if (updatedAdoptante) {
+            res.json(updatedAdoptante);
+        } else {
+            res.status(404).json({ message: 'Adoptante no encontrado' });
+        }
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+
+export const deleteAdoptante = async (req, res) => {
+    try {
+        const deleted = await AdoptanteService.deleteAdoptante(req.params.id);
+        if (deleted) {
+            res.status(204).end();
         } else {
             res.status(404).json({ message: 'Adoptante no encontrado' });
         }
@@ -93,16 +75,31 @@ export const updateAdoptante = async (req, res) => {
     }
 };
 
-// Eliminar un adoptante
-export const deleteAdoptante = async (req, res) => {
+export const loginAdoptante = async (req, res) => {
     try {
-        const adoptante = await Adoptante.findByPk(req.params.id);
+        const adoptante = await AdoptanteService.loginAdoptante(req.body.email, req.body.contraseña);
+        res.json(adoptante);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+export const getAdoptanteByCedula = async (req, res) => {
+    try {
+        const adoptante = await AdoptanteService.getAdoptanteByCedula(req.params.cedula);
         if (adoptante) {
-            await adoptante.destroy();
-            res.status(204).json({ message: 'Adoptante eliminado' });
+            res.json(adoptante);
         } else {
             res.status(404).json({ message: 'Adoptante no encontrado' });
         }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+export const getAdoptantesOrdenadosPorNombre = async (req, res) => {
+    try {
+        const adoptantes = await AdoptanteService.getAdoptantesOrdenadosPorNombre();
+        res.json(adoptantes);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

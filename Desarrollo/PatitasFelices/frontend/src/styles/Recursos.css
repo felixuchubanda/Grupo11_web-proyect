@@ -1,0 +1,64 @@
+.recursos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .titulo-principal {
+    text-align: center;
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 40px;
+  }
+  
+  .consejo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 20px;
+  }
+  
+  .imagen {
+    flex: 1;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .imagen.alimentacion {
+    background-image: url('../assets/bella.jpeg');
+  }
+  
+  .imagen.ejercicio {
+    background-image: url('../assets/buster.jpeg');
+  }
+  
+  .imagen.veterinario {
+    background-image: url('../assets/charlie.jpeg');
+  }
+  
+  .imagen.higiene {
+    background-image: url('../assets/coco.jpeg');
+  }
+  
+  .texto {
+    flex: 2;
+  }
+  
+  .texto h2 {
+    font-size: 1.8em;
+    color: #27ae60;
+    margin-bottom: 10px;
+  }
+  
+  .texto p {
+    font-size: 1.2em;
+    color: #34495e;
+    line-height: 1.6;
+  }
+  

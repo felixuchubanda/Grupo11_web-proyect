@@ -1,12 +1,20 @@
 import { Router } from 'express';
-import { createUsuario, getUsuarios, getUsuarioById, updateUsuario, deleteUsuario } from '../../controllers/patitasfelices/usuario.controller.js';
+import {
+    createUsuario,
+    getAllUsuarios,
+    getUsuarioById,
+    updateUsuario,
+    deleteUsuario,
+    loginUsuario
+} from '../../controllers/index.js';
 
 const router = Router();
 
 router.post('/', createUsuario);
-router.get('/', getUsuarios);
+router.get('/', getAllUsuarios);
 router.get('/:id', getUsuarioById);
 router.put('/:id', updateUsuario);
 router.delete('/:id', deleteUsuario);
+router.post('/login', loginUsuario);
 
 export default router;

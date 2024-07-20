@@ -9,10 +9,10 @@ const variableConfig = {
     dbPassword: process.env.DB_PASSWORD || "",
     dbServer: process.env.DB_SERVER || "",
     dbDatabase: process.env.DB_DATABASE || "",
-    dbDialect: process.env.DB_DIALECT,
+    dbDialect: process.env.DB_DIALECT || "postgres",
     dbPort: process.env.DB_PORT || "",
-    dbName: process.env.DB_NAME,
+    dbName: process.env.DB_NAME || "",
     tokenSecreto: process.env.TOKENSECRETO || "",
-}
+};
 
-export default variableConfig
+export default variableConfig;

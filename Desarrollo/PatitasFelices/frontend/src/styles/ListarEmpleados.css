@@ -1,0 +1,73 @@
+.listar-empleados-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .listar-empleados-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .crear-nuevo-btn {
+    display: block;
+    margin: 0 auto 20px auto;
+    background-color: #8BC34A; /* Lime green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .crear-nuevo-btn:hover {
+    opacity: 0.9;
+  }
+  
+  .empleados-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .empleados-table th, .empleados-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .empleados-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .empleados-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .empleados-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .edit-btn, .delete-btn {
+    background-color: #8BC34A; /* Lime green */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  
+  .delete-btn {
+    background-color: #f44336; /* Red */
+  }
+  
+  .edit-btn:hover, .delete-btn:hover {
+    opacity: 0.9;
+  }
+  

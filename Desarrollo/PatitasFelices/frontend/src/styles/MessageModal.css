@@ -1,0 +1,62 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 25%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.modal-success {
+  background-color: #4CAF50;
+}
+
+.modal-error {
+  background-color: #f44336;
+}
+
+.modal-welcome {
+  background-color: #4CAF50; /* Color para la bienvenida */
+}
+
+.modal-welcome .modal-image {
+  width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.modal-content button {
+  background-color: #525252;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  outline: none;
+}
+
+.modal-content button:hover {
+  background-color: #616161;
+}

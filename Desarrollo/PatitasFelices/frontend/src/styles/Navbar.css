@@ -1,0 +1,110 @@
+/* Estilo base del nav y los enlaces */
+nav {
+  background-color: #3abdda; /* Color de fondo del navbar */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* Asegurar que la logo y el menú estén separados */
+  align-items: center; /* Centrar verticalmente los elementos */
+}
+
+nav .logo {
+  width: 50px; /* Ajustar el tamaño de la logo */
+  height: 50px; /* Ajustar el tamaño de la logo */
+  background: url('../assets/logo.png') no-repeat center center; /* Ruta de la logo */
+  background-size: cover; /* Ajustar la logo al contenedor */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Alinear los elementos a la derecha */
+}
+
+nav ul li {
+  position: relative;
+  margin-right: 20px; /* Espacio entre los elementos del navbar */
+}
+
+nav ul li a,
+nav ul li button {
+  text-decoration: none;
+  color: #ffffff; /* Color del texto */
+  padding: 10px 20px;
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+nav ul li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+  background-color: #1dcbfc; /* Color de fondo al pasar el ratón */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo del menú desplegable */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #63c3de; /* Color de fondo del menú desplegable */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 10px 0; /* Espacio interno del menú desplegable */
+  margin: 0;
+  z-index: 1000;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  color: #ecf0f1; /* Color del texto */
+  padding: 10px 20px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #1abc9c; /* Color de fondo al pasar el ratón */
+}
+
+/* Mostrar el menú desplegable al pasar el ratón */
+nav ul li:hover .dropdown-menu {
+  display: block;
+}
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Cambiar la dirección a columna en pantallas pequeñas */
+  }
+
+  nav ul li {
+    width: 100%; /* Hacer los elementos del navbar ocupen todo el ancho */
+    margin: 5px 0; /* Espacio entre los elementos del navbar */
+  }
+
+  nav ul li a,
+  nav ul li button {
+    width: 100%; /* Hacer los enlaces y botones ocupen todo el ancho */
+    text-align: center; /* Centrar el texto */
+  }
+
+  .dropdown-menu {
+    position: static; /* Posición estática para el menú desplegable en pantallas pequeñas */
+    width: 100%;
+    box-shadow: none;
+  }
+}

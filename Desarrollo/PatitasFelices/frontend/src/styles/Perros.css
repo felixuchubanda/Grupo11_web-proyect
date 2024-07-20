@@ -1,0 +1,245 @@
+.perros-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.perros-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #333;
+}
+
+.filters input {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.perros-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.perros-table th,
+.perros-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.perros-table th {
+  background-color: #eaeaea;
+  color: #333;
+}
+
+.perros-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.perros-table tr:hover {
+  background-color: #e1f5fe;
+}
+
+.perros-table img {
+  max-width: 100px;
+  border-radius: 5px;
+}
+
+.perros-table button {
+  padding: 8px 16px;
+  background-color: #32cd32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.perros-table button:hover {
+  background-color: #2eb82e;
+}
+
+.solicitar-container {
+  margin-top: 20px;
+}
+/* Estilos para el modal */
+.Modal {
+  position: relative; /* Asegura que el posicionamiento absoluto del botón X funcione correctamente */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Modal button {
+  background-color: #4CAF50; /* Verde para el botón Iniciar Sesión */
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  width: auto; /* Para evitar que ocupen todo el ancho */
+  min-width: 120px; /* Ancho mínimo para mantener la estética */
+}
+
+.Modal button:hover {
+  background-color: #45a049;
+}
+
+.Modal .close-btn {
+  background-color: #d9534f; /* Rojo para el botón Cerrar */
+}
+
+.Modal .close-btn:hover {
+  background-color: #c9302c;
+}
+
+.Modal .button-container {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  align-items: center; /* Alinea los botones verticalmente al centro */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: -10px;  /* Ajusta esto para posicionar cerca del borde superior del modal */
+  right: -10px;  /* Ajusta esto para alinear con el borde derecho del modal */
+  border: none;
+  background-color: #f8f8f8 !important;  /* Rojo para el fondo */
+  color: rgb(0, 0, 0) !important;  /* Texto en color blanco */
+  cursor: pointer;
+  font-size: 16px;  /* Tamaño de la fuente adecuado para un botón pequeño */
+  line-height: 16px;  /* Alineación vertical del texto en el botón */
+  padding: 0;  /* Elimina el padding para reducir el fondo */
+  margin: 0;  /* Asegúrate de que no hay márgenes adicionales */
+  border-radius: 50%;  /* Redondeado para forma circular */
+  width: 24px;  /* Ancho específico más pequeño */
+  height: 26px;  /* Altura específica para hacerlo circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;  
+}
+
+.close-modal-btn:hover {
+  background-color: #d32f2f !important;  
+}
+
+/* modal para solicitud  */
+.solicitar-modal {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.solicitar-modal h2 {
+  text-align: center;
+  color: #333;
+}
+
+.solicitar-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.solicitar-modal label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.solicitar-modal input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
+  max-width: 500px; /* Establece un máximo para no estirarse demasiado en pantallas grandes */
+}
+
+.solicitar-modal button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 40%; /* Botones que ocupan todo el ancho del contenedor */
+  margin-top: 10px;
+}
+
+.solicitar-modal .submit-btn {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+}
+
+.solicitar-modal .close-btn {
+  background-color: #f44336; /* Rojo */
+  color: white;
+}
+
+.solicitar-modal .error-message {
+  color: #f44336; /* Rojo para mensajes de error */
+  font-weight: bold;
+}
+
+.solicitar-modal button:hover {
+  opacity: 0.9; /* Efecto sutil para hover */
+}
+.solicitar-modal textarea {
+  width: 100%; /* Asegura que el textarea ocupe todo el ancho disponible */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 50px; /* Altura mínima inicial */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Alinea los botones horizontalmente y los separa */
+  gap: 10px; /* Espacio entre botones */
+}

@@ -1,4 +1,3 @@
-
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../../database/database.js';
 
@@ -23,5 +22,6 @@ export const Recursoedu = sequelize.define('tb_recursoedu', {
   },
 }, {
   schema: "patitasfelices",
-  timestamps: true,  // Enable timestamps for created_at and updated_at columns
+  tableName: 'tb_recursoedu',
+  timestamps: true,
 });

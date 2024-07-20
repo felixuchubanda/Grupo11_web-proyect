@@ -1,10 +1,16 @@
 import { Router } from 'express';
-import { createRecursoedu, getRecursosedu, getRecursoeduById, updateRecursoedu, deleteRecursoedu } from '../../controllers/patitasfelices/recursoedu.controller.js';
+import {
+    createRecursoedu,
+    getAllRecursosedu,
+    getRecursoeduById,
+    updateRecursoedu,
+    deleteRecursoedu
+} from '../../controllers/index.js';
 
 const router = Router();
 
 router.post('/', createRecursoedu);
-router.get('/', getRecursosedu);
+router.get('/', getAllRecursosedu);
 router.get('/:id', getRecursoeduById);
 router.put('/:id', updateRecursoedu);
 router.delete('/:id', deleteRecursoedu);

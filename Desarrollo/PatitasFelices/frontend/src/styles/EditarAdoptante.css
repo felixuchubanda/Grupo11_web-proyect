@@ -1,0 +1,75 @@
+/* EditarAdoptante.css */
+.editar-adoptante-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .editar-adoptante-container h2 {
+    text-align: center;
+    color: #4CAF50; /* Verde limón */
+  }
+  
+  .editar-adoptante-container form div {
+    margin-bottom: 15px;
+  }
+  
+  .editar-adoptante-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .editar-adoptante-container input,
+  .editar-adoptante-container select,
+  .editar-adoptante-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .editar-adoptante-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #8BC34A; /* Verde limón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .editar-adoptante-container button[type="button"] {
+    background-color: #f44336; /* Rojo para el botón cancelar */
+  }
+  
+  .editar-adoptante-container p {
+    color: #f44336;
+    font-size: 12px;
+  }
+  
+  .editar-adoptante-container input[type="number"],
+  .editar-adoptante-container input[type="text"],
+  .editar-adoptante-container input[type="email"],
+  .editar-adoptante-container input[type="password"],
+  .editar-adoptante-container select,
+  .editar-adoptante-container textarea {
+    background-color: #f9f9f9; /* Fondo claro */
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .editar-adoptante-container input[type="number"]:focus,
+  .editar-adoptante-container input[type="text"]:focus,
+  .editar-adoptante-container input[type="email"]:focus,
+  .editar-adoptante-container input[type="password"]:focus,
+  .editar-adoptante-container select:focus,
+  .editar-adoptante-container textarea:focus {
+    border-color: #8BC34A; /* Verde limón */
+  }
+  

@@ -7,7 +7,7 @@ export const sequelize= new Sequelize (
     {
         host:variableConfig.dbServer,
         dialect:variableConfig.dbDialect,
-        port:variableConfig.dbPort
-
+        port:variableConfig.dbPort,
+        logging: false,
     }
 )

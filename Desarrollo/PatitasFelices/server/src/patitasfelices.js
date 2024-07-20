@@ -1,3 +1,4 @@
+//src/patitasfelices.js
 import app from './app.js'
 import variableConfig from './config/index.config.js'
 import { sequelize } from './database/database.js'

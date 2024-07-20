@@ -1,0 +1,57 @@
+/* Register.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('../assets/registrarusuario.png'); /* Reemplaza con la URL de tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+h2 {
+  color: #8BC34A; /* Verde limón */
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #8BC34A; /* Borde verde limón */
+  border-radius: 4px;
+}
+
+button {
+  background-color: #8BC34A; /* Botón verde limón */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #7CB342; /* Color del botón al pasar el ratón */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  input, select, button {
+    font-size: 14px;
+  }
+}

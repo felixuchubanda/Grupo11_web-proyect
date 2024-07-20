@@ -1,0 +1,181 @@
+.inicio-container {
+  text-align: center;
+  background-image: url('https://fondosmil.com/fondo/37827.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero {
+  padding: 50px 20px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.hero p {
+  margin: 10px 0;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f26849;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dogs-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.dog-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.dog-card:hover {
+  transform: translateY(-10px);
+}
+
+.dog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.dog-card-info {
+  padding: 15px;
+}
+
+.dog-card-info h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.dog-card-info p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.dog-description {
+  margin-top: 10px;
+  font-style: italic;
+  color: #444;
+}
+
+.solicitud-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.solicitud-button:hover {
+  background-color: #45a049;
+}
+
+.footer-container {
+  background-color: #b7e2bc;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.modal p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.modal a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.modal a:hover {
+  text-decoration: underline;
+}

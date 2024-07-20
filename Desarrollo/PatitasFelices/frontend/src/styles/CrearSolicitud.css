@@ -1,0 +1,72 @@
+.crear-solicitud-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.crear-solicitud-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4CAF50; /* Verde */
+}
+
+.crear-solicitud-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.crear-solicitud-form div {
+  margin-bottom: 15px;
+}
+
+.crear-solicitud-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.crear-solicitud-form select,
+.crear-solicitud-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.crear-solicitud-form .button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.crear-solicitud-form button {
+  width: 48%;
+  padding: 10px;
+  background-color: #8BC34A; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.crear-solicitud-form button:hover {
+  opacity: 0.9;
+}
+
+.crear-solicitud-form .cancel-btn {
+  background-color: #f44336; /* Rojo */
+}
+
+.crear-solicitud-form .cancel-btn:hover {
+  opacity: 0.9;
+}
+
+.crear-solicitud-form p {
+  color: red;
+  margin: 0;
+  font-size: 14px;
+}

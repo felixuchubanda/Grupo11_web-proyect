@@ -1,0 +1,106 @@
+/* Recomendar.css */
+
+.recomendar-container {
+  max-width: 600px; /* Ajusta el ancho máximo del contenedor */
+  margin: 20px auto; /* Centra el contenedor y agrega espacio alrededor */
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.recomendar-container button {
+  background-color: #8BC34A;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  display: inline-block; /* No ocupa todo el ancho */
+}
+
+.recomendar-container button:hover {
+  background-color: #76a142;
+}
+
+.recomendar-container .cancel-button {
+  background-color: #f44336; /* Rojo */
+  margin-left: 10px;
+}
+
+.recomendar-container .cancel-button:hover {
+  background-color: #d32f2f;
+}
+
+.recomendar-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recomendar-container li {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recomendar-container li img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recomendar-container .similarity-bar-container {
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.recomendar-container .similarity-bar {
+  height: 100%;
+  background-color: #8BC34A;
+}
+
+.recomendar-container .heart-container {
+  display: flex;
+  align-items: center;
+}
+
+.recomendar-container .heart {
+  font-size: 16px;
+  color: red;
+  margin-left: 5px;
+}
+
+.recomendar-container input[type="date"],
+.recomendar-container textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.recomendar-container button[type="submit"] {
+  background-color: #8BC34A;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.recomendar-container button[type="submit"]:hover {
+  background-color: #76a142;
+}

@@ -1,0 +1,61 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.contactos-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido horizontalmente */
+    justify-content: center; /* Centrar contenido verticalmente */
+    height: 100%;
+    background-image: url('../assets/contactos.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    padding: 20px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para mejorar legibilidad */
+    border-radius: 10px;
+    width: 80%; /* Ancho del contenido ajustable */
+    max-width: 600px; /* Ancho máximo para evitar que se extienda demasiado */
+    text-align: center; /* Centrar texto */
+}
+
+.box {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Fondo de los cuadros */
+}
+
+.contact-info h2, .contact-hours h2, .contact-social h2 {
+    color: #2bd742;
+}
+
+.contact-social a {
+    display: block;
+    margin-bottom: 10px;
+    color: #2bd742;
+    text-decoration: none;
+}
+
+.contact-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-container {
+    background-color: rgba(43, 215, 66, 0.9); /* Fondo semi-transparente */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-container p {
+    margin: 5px 0;
+}

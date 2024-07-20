@@ -1,31 +1,28 @@
-import { Estado } from '../../models/patitasfelices/estado.model.js';
+import { EstadoService } from '../../services/index.js';  // Ajuste de la ruta de importación
 
-// Crear un nuevo estado
 export const createEstado = async (req, res) => {
     try {
-        const newEstado = await Estado.create(req.body);
-        res.status(201).json(newEstado);
+        const estado = await EstadoService.createEstado(req.body);
+        res.status(201).json(estado);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(400).json({ message: error.message });
     }
 };
 
-// Obtener todos los estados
-export const getEstados = async (req, res) => {
+export const getAllEstados = async (req, res) => {
     try {
-        const estados = await Estado.findAll();
-        res.status(200).json(estados);
+        const estados = await EstadoService.getAllEstados();
+        res.json(estados);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
 
-// Obtener un estado por ID
 export const getEstadoById = async (req, res) => {
     try {
-        const estado = await Estado.findByPk(req.params.id);
+        const estado = await EstadoService.getEstadoById(req.params.id);
         if (estado) {
-            res.status(200).json(estado);
+            res.json(estado);
         } else {
             res.status(404).json({ message: 'Estado no encontrado' });
         }
@@ -34,28 +31,24 @@ export const getEstadoById = async (req, res) => {
     }
 };
 
-// Actualizar un estado
 export const updateEstado = async (req, res) => {
     try {
-        const estado = await Estado.findByPk(req.params.id);
-        if (estado) {
-            await estado.update(req.body);
-            res.status(200).json(estado);
+        const updatedEstado = await EstadoService.updateEstado(req.params.id, req.body);
+        if (updatedEstado) {
+            res.json(updatedEstado);
         } else {
             res.status(404).json({ message: 'Estado no encontrado' });
         }
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(400).json({ message: error.message });
     }
 };
 
-// Eliminar un estado
 export const deleteEstado = async (req, res) => {
     try {
-        const estado = await Estado.findByPk(req.params.id);
-        if (estado) {
-            await estado.destroy();
-            res.status(204).json({ message: 'Estado eliminado' });
+        const deleted = await EstadoService.deleteEstado(req.params.id);
+        if (deleted) {
+            res.status(204).end();
         } else {
             res.status(404).json({ message: 'Estado no encontrado' });
         }

@@ -1,0 +1,127 @@
+/* ListarAdoptantes.css */
+.listar-adoptantes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.listar-adoptantes-container h2 {
+  text-align: center;
+  color: #4CAF50; /* Verde limón */
+  margin-bottom: 20px;
+}
+
+.crear-nuevo-btn {
+  background-color: #8BC34A; /* Verde limón */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+.filters input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.adoptantes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adoptantes-table th, .adoptantes-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.adoptantes-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.adoptantes-table td {
+  color: #666;
+}
+
+.edit-btn, .delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #8BC34A; /* Naranja */
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336; /* Rojo */
+  color: white;
+  margin-left: 5px;
+}
+/* ListarAdoptantes.css */
+/* Otros estilos aquí... */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination button.active {
+  background-color: #2196F3; /* Color azul */
+  color: white;
+  border: none;
+}
+
+.pagination button:focus {
+  outline: none;
+}
+
+.pagination button:hover {
+  border-color: #bbb;
+}

@@ -1,10 +1,16 @@
 import { Router } from 'express';
-import { createEstado, getEstados, getEstadoById, updateEstado, deleteEstado } from '../../controllers/patitasfelices/estado.controller.js';
+import {
+    createEstado,
+    getAllEstados,
+    getEstadoById,
+    updateEstado,
+    deleteEstado
+} from '../../controllers/index.js';
 
 const router = Router();
 
 router.post('/', createEstado);
-router.get('/', getEstados);
+router.get('/', getAllEstados);
 router.get('/:id', getEstadoById);
 router.put('/:id', updateEstado);
 router.delete('/:id', deleteEstado);

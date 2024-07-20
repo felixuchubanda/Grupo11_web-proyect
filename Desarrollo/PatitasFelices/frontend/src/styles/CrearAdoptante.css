@@ -1,0 +1,75 @@
+/* CrearAdoptante.css */
+.crear-adoptante-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .crear-adoptante-container h2 {
+    text-align: center;
+    color: #4CAF50; /* Verde limón */
+  }
+  
+  .crear-adoptante-container form div {
+    margin-bottom: 15px;
+  }
+  
+  .crear-adoptante-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .crear-adoptante-container input,
+  .crear-adoptante-container select,
+  .crear-adoptante-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .crear-adoptante-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #8BC34A; /* Verde limón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .crear-adoptante-container button[type="button"] {
+    background-color: #f44336; /* Rojo para el botón cancelar */
+  }
+  
+  .crear-adoptante-container p {
+    color: #f44336;
+    font-size: 12px;
+  }
+  
+  .crear-adoptante-container input[type="number"],
+  .crear-adoptante-container input[type="text"],
+  .crear-adoptante-container input[type="email"],
+  .crear-adoptante-container input[type="password"],
+  .crear-adoptante-container select,
+  .crear-adoptante-container textarea {
+    background-color: #f9f9f9; /* Fondo claro */
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .crear-adoptante-container input[type="number"]:focus,
+  .crear-adoptante-container input[type="text"]:focus,
+  .crear-adoptante-container input[type="email"]:focus,
+  .crear-adoptante-container input[type="password"]:focus,
+  .crear-adoptante-container select:focus,
+  .crear-adoptante-container textarea:focus {
+    border-color: #8BC34A; /* Verde limón */
+  }
+  

@@ -1,0 +1,72 @@
+.recomendar-button {
+  background-color: #32cd32; /* verde limón */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.recomendar-button:hover {
+  background-color: #28a745; /* verde un poco más oscuro */
+}
+
+.similarity-heart-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.similarity-heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: red;
+  clip-path: polygon(50% 0%, 75% 25%, 100% 50%, 50% 100%, 0% 50%, 25% 25%);
+  z-index: 1;
+}
+
+.similarity-heart::after {
+  content: '❤';
+  font-size: 50px;
+  color: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.recomendar-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.recomendar-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.recomendar-container select,
+.recomendar-container input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.recomendar-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}

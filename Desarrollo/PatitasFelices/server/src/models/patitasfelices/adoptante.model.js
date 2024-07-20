@@ -1,18 +1,34 @@
+// src/models/adoptante.model.js
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../../database/database.js';
-import { Test } from './test.modelo.js';
-import { Usuario } from './usuarios_model.js';
-import { SolicitudAdopcion } from './solicitudadop.modelo.js';
+import { Usuario } from './usuarios.model.js'; // Importa el modelo de Usuario
+
 export const Adoptante = sequelize.define('tb_adoptante', {
   id_adoptante: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-
   id_usuario: {
     type: DataTypes.INTEGER,
-    allowNull: false,    
+  },
+  nombre: {
+    type: DataTypes.STRING(100),
+    allowNull: false,
+    validate: {
+      isAlpha: true, 
+      notEmpty: true,
+      len: [3, 100]
+    },
+  },
+  apellido: {
+    type: DataTypes.STRING(100),
+    allowNull: false,
+    validate: {
+      isAlpha: true, 
+      notEmpty: true,
+      len: [3, 100]
+    },
   },
   cedula: {
     type: DataTypes.STRING(100),
@@ -20,7 +36,7 @@ export const Adoptante = sequelize.define('tb_adoptante', {
     unique: true,
   },
   genero: {
-    type: DataTypes.ENUM('M', 'F'), // Assuming 'M' for Male and 'F' for Female
+    type: DataTypes.ENUM('M', 'F'),
     allowNull: false,
   },
   direccion: {
@@ -38,7 +54,7 @@ export const Adoptante = sequelize.define('tb_adoptante', {
       isEmail: true,
     },
   },
-  contraseña: {
+  contrasena: {
     type: DataTypes.STRING(100),
     allowNull: false,
   },
@@ -48,6 +64,7 @@ export const Adoptante = sequelize.define('tb_adoptante', {
     validate: {
       isInt: true,
       min: 18,
+      max: 70, 
     },
   },
   tiene_ninos: {
@@ -76,7 +93,7 @@ export const Adoptante = sequelize.define('tb_adoptante', {
       max: 5,
     },
   },
-  tamaño_perro_preferido: {
+  tamano_perro_preferido: {
     type: DataTypes.ENUM('PEQUEÑO', 'MEDIANO', 'GRANDE'),
     allowNull: false,
   },
@@ -86,29 +103,14 @@ export const Adoptante = sequelize.define('tb_adoptante', {
   },
 }, {
   schema: "patitasfelices",
-  timestamps: true, // Enable timestamps for created_at and updated_at columns
+  tableName: 'tb_adoptante',
+  timestamps: true,
+  hooks: {
+    afterDestroy: async (adoptante, options) => {
+      const usuario = await Usuario.findByPk(adoptante.id_usuario);
+      if (usuario) {
+        await usuario.destroy(options);
+      }
+    }
+  }
 });
-//de uno a muchos
-Adoptante.hasMany(Test,{
-foreignKey:'id_adoptante',
-sourceKey:'id_adoptante',
-});
-
-Test.belongsTo(Adoptante,{
-  foreignKey:'id_adoptante',
-  targetKey: 'id_adoptante',
-});
-
-
-//de uno a muchos adoptante a solicitud
-Adoptante.hasMany(SolicitudAdopcion,{
-  foreignKey: 'id_adoptante',
-  sourceKey: 'id_adoptante',
-});
-
-SolicitudAdopcion.belongsTo(Adoptante,{
-  foreignKey: 'id_adoptante',
-  targetKey: 'id_adoptante',
-});
-
-
